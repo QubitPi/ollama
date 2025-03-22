@@ -1,7 +1,8 @@
 # Documentation
 
 ### Getting Started
-* [Quickstart](../README.md#quickstart)
+
+* [Quickstart](https://github.com/QubitPi/ollama?tab=readme-ov-file#quickstart)
 * [Examples](./examples.md)
 * [Importing models](./import.md)
 * [MacOS Documentation](./macos.md)
@@ -13,7 +14,9 @@
 
 * [API Reference](./api.md)
 * [Modelfile Reference](./modelfile.md)
+* [Template](./template.md)
 * [OpenAI Compatibility](./openai.md)
+* [GPU](./gpu.md)
 
 ### Resources
 
