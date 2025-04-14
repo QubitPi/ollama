@@ -20,12 +20,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build with mkdocs-material via Docker
-        run: '.github/workflows/scripts/docs/build-docs.sh'
+        working-directory: docs
+        run: '../.github/workflows/scripts/docs/build-docs.sh'
       - name: Deploy to Github Pages
         uses: peaceiris/actions-gh-pages@v4.0.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site
+          publish_dir: docs/site
           user_name: ${{ env.GIT_USER }}
           user_email: ${{ env.GIT_EMAIL }}
           cname: ollama.qubitpi.org
