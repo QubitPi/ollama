@@ -5,7 +5,7 @@ docker run \
   --rm \
   --quiet \
   --user "$(id -u):$(id -g)" \
-  --volume "./docs:/docs" \
+  --volume "./:/docs" \
   --name "build-docs" \
   squidfunk/mkdocs-material:9.6 build --strict
 

@@ -5,12 +5,12 @@ copyright: '<p>&copy <a href="https://github.com/QubitPi"><em>QubitPi</em></a><b
 repo_name: 'ollama'
 repo_url: 'https://github.com/QubitPi/ollama'
 edit_uri: 'edit/master/docs'
-docs_dir: 'docs'
+docs_dir: '.'
 site_url: 'https://ollama.qubitpi.org'
 
 theme:
   name: 'material'
-  custom_dir: 'docs/overrides/'
+  custom_dir: 'overrides/'
   favicon: assets/logo/favicon.ico
   logo: assets/logo/ollama.png
   icon:
