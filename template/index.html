@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../assets/logo/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -1195,9 +1195,9 @@
 <li><strong>Functions</strong>: Custom functions or logic that can be used to manipulate the template's content.</li>
 </ul>
 <p>Here's an example of a simple chat template:</p>
-<div class="highlight"><pre><span></span><code>{{- range .Messages }}
-{{ .Role }}: {{ .Content }}
-{{- end }}
+<div class="highlight"><pre><span></span><code><span class="p">{{</span><span class="o">-</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="p">.</span><span class="nx">Messages</span><span class="w"> </span><span class="p">}}</span>
+<span class="p">{{</span><span class="w"> </span><span class="p">.</span><span class="nx">Role</span><span class="w"> </span><span class="p">}}:</span><span class="w"> </span><span class="p">{{</span><span class="w"> </span><span class="p">.</span><span class="nx">Content</span><span class="w"> </span><span class="p">}}</span>
+<span class="p">{{</span><span class="o">-</span><span class="w"> </span><span class="nx">end</span><span class="w"> </span><span class="p">}}</span>
 </code></pre></div>
 <p>In this example, we have:</p>
 <ul>
@@ -1293,7 +1293,7 @@ CodeLlama 34B and 70B code completion and all instruct and Python fine-tuned mod
 </blockquote>
 <h4 id="codestral"><a class="toclink" href="#codestral">Codestral</a></h4>
 <p>Codestral <a href="https://ollama.com/library/codestral:22b">22B</a> supports fill-in-middle.</p>
-<div class="highlight"><pre><span></span><code>[SUFFIX]{{ .Suffix }}[PREFIX] {{ .Prompt }}
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="nx">SUFFIX</span><span class="p">]{{</span><span class="w"> </span><span class="p">.</span><span class="nx">Suffix</span><span class="w"> </span><span class="p">}}[</span><span class="nx">PREFIX</span><span class="p">]</span><span class="w"> </span><span class="p">{{</span><span class="w"> </span><span class="p">.</span><span class="nx">Prompt</span><span class="w"> </span><span class="p">}}</span>
 </code></pre></div>
 
 
