@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../assets/logo/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -4257,7 +4257,7 @@
 </ul>
 <h2 id="conventions"><a class="toclink" href="#conventions">Conventions</a></h2>
 <h3 id="model-names"><a class="toclink" href="#model-names">Model names</a></h3>
-<p>Model names follow a <code>model:tag</code> format, where <code>model</code> can have an optional namespace such as <code>example/model</code>. Some examples are <code>orca-mini:3b-q4_1</code> and <code>llama3:70b</code>. The tag is optional and, if not provided, will default to <code>latest</code>. The tag is used to identify a specific version.</p>
+<p>Model names follow a <code>model:tag</code> format, where <code>model</code> can have an optional namespace such as <code>example/model</code>. Some examples are <code>orca-mini:3b-q8_0</code> and <code>llama3:70b</code>. The tag is optional and, if not provided, will default to <code>latest</code>. The tag is used to identify a specific version.</p>
 <h3 id="durations"><a class="toclink" href="#durations">Durations</a></h3>
 <p>All durations are returned in nanoseconds.</p>
 <h3 id="streaming-responses"><a class="toclink" href="#streaming-responses">Streaming responses</a></h3>
@@ -4551,9 +4551,6 @@ When <code>format</code> is set to <code>json</code>, the output will always be 
 <span class="s1">    &quot;repeat_penalty&quot;: 1.2,</span>
 <span class="s1">    &quot;presence_penalty&quot;: 1.5,</span>
 <span class="s1">    &quot;frequency_penalty&quot;: 1.0,</span>
-<span class="s1">    &quot;mirostat&quot;: 1,</span>
-<span class="s1">    &quot;mirostat_tau&quot;: 0.8,</span>
-<span class="s1">    &quot;mirostat_eta&quot;: 0.6,</span>
 <span class="s1">    &quot;penalize_newline&quot;: true,</span>
 <span class="s1">    &quot;stop&quot;: [&quot;\n&quot;, &quot;user:&quot;],</span>
 <span class="s1">    &quot;numa&quot;: false,</span>
@@ -4561,10 +4558,7 @@ When <code>format</code> is set to <code>json</code>, the output will always be 
 <span class="s1">    &quot;num_batch&quot;: 2,</span>
 <span class="s1">    &quot;num_gpu&quot;: 1,</span>
 <span class="s1">    &quot;main_gpu&quot;: 0,</span>
-<span class="s1">    &quot;low_vram&quot;: false,</span>
-<span class="s1">    &quot;vocab_only&quot;: false,</span>
 <span class="s1">    &quot;use_mmap&quot;: true,</span>
-<span class="s1">    &quot;use_mlock&quot;: false,</span>
 <span class="s1">    &quot;num_thread&quot;: 8</span>
 <span class="s1">  }</span>
 <span class="s1">}&#39;</span>
@@ -5010,55 +5004,11 @@ When <code>format</code> is set to <code>json</code>, the output will always be 
 </thead>
 <tbody>
 <tr>
-<td>q2_K</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>q3_K_L</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>q3_K_M</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>q3_K_S</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>q4_0</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>q4_1</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
 <td>q4_K_M</td>
 <td style="text-align: center;">*</td>
 </tr>
 <tr>
 <td>q4_K_S</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>q5_0</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>q5_1</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>q5_K_M</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>q5_K_S</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>q6_K</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
@@ -5095,19 +5045,21 @@ When <code>format</code> is set to <code>json</code>, the output will always be 
 <p>Quantize a non-quantized model.</p>
 <h5 id="request_21"><a class="toclink" href="#request_21">Request</a></h5>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>http://localhost:11434/api/create<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
-<span class="s1">  &quot;model&quot;: &quot;llama3.1:quantized&quot;,</span>
-<span class="s1">  &quot;from&quot;: &quot;llama3.1:8b-instruct-fp16&quot;,</span>
+<span class="s1">  &quot;model&quot;: &quot;llama3.2:quantized&quot;,</span>
+<span class="s1">  &quot;from&quot;: &quot;llama3.2:3b-instruct-fp16&quot;,</span>
 <span class="s1">  &quot;quantize&quot;: &quot;q4_K_M&quot;</span>
 <span class="s1">}&#39;</span>
 </code></pre></div>
 <h5 id="response_20"><a class="toclink" href="#response_20">Response</a></h5>
 <p>A stream of JSON objects is returned:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;quantizing F16 model to Q4_K_M&quot;</span><span class="p">}</span>
-<span class="p">{</span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;creating new layer sha256:667b0c1932bc6ffc593ed1d03f895bf2dc8dc6df21db3042284a6f4416b06a29&quot;</span><span class="p">}</span>
-<span class="p">{</span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;using existing layer sha256:11ce4ee3e170f6adebac9a991c22e22ab3f8530e154ee669954c4bc73061c258&quot;</span><span class="p">}</span>
-<span class="p">{</span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;using existing layer sha256:0ba8f0e314b4264dfd19df045cde9d4c394a52474bf92ed6a3de22a4ca31a177&quot;</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;quantizing F16 model to Q4_K_M&quot;</span><span class="p">,</span><span class="nt">&quot;digest&quot;</span><span class="p">:</span><span class="s2">&quot;0&quot;</span><span class="p">,</span><span class="nt">&quot;total&quot;</span><span class="p">:</span><span class="mi">6433687776</span><span class="p">,</span><span class="nt">&quot;completed&quot;</span><span class="p">:</span><span class="mi">12302</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;quantizing F16 model to Q4_K_M&quot;</span><span class="p">,</span><span class="nt">&quot;digest&quot;</span><span class="p">:</span><span class="s2">&quot;0&quot;</span><span class="p">,</span><span class="nt">&quot;total&quot;</span><span class="p">:</span><span class="mi">6433687776</span><span class="p">,</span><span class="nt">&quot;completed&quot;</span><span class="p">:</span><span class="mi">6433687552</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;verifying conversion&quot;</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;creating new layer sha256:fb7f4f211b89c6c4928ff4ddb73db9f9c0cfca3e000c3e40d6cf27ddc6ca72eb&quot;</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;using existing layer sha256:966de95ca8a62200913e3f8bfbf84c8494536f1b94b49166851e76644e966396&quot;</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;using existing layer sha256:fcc5a6bec9daf9b561a68827b67ab6088e1dba9d1fa2a50d7bbcc8384e0a265d&quot;</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;using existing layer sha256:a70ff7e570d97baaf4e62ac6e6ad9975e04caa6d900d3742d37698494479e0cd&quot;</span><span class="p">}</span>
 <span class="p">{</span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;using existing layer sha256:56bb8bd477a519ffa694fc449c2413c6f0e1d3b1c88fa7e3c9d88d3ae49d4dcb&quot;</span><span class="p">}</span>
-<span class="p">{</span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;creating new layer sha256:455f34728c9b5dd3376378bfb809ee166c145b0b4c1f1a6feca069055066ef9a&quot;</span><span class="p">}</span>
 <span class="p">{</span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;writing manifest&quot;</span><span class="p">}</span>
 <span class="p">{</span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;success&quot;</span><span class="p">}</span>
 </code></pre></div>
@@ -5193,29 +5145,37 @@ When <code>format</code> is set to <code>json</code>, the output will always be 
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;codellama:13b&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;modified_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-11-04T14:56:49.277302595-07:00&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;size&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7365960935</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;digest&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9f438cb9cd581fc025612d27f7c1a6669ff83a8bb0ed86c94fcf4c5440555697&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;deepseek-r1:latest&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;deepseek-r1:latest&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;modified_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-05-10T08:06:48.639712648-07:00&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;size&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4683075271</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;digest&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0a8c266910232fd3291e71e5ba1e058cc5af9d411192cf88b6d30e92b6e73163&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;parent_model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gguf&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;family&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;llama&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;families&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;parameter_size&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;13B&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;quantization_level&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Q4_0&quot;</span>
+<span class="w">        </span><span class="nt">&quot;family&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;qwen2&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;families&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="s2">&quot;qwen2&quot;</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;parameter_size&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7.6B&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;quantization_level&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Q4_K_M&quot;</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;llama3:latest&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;modified_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-12-07T09:32:18.757212583-08:00&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;size&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3825819519</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;digest&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fe938a131f40e6f6d40083c9f0f430a515233eb2edaa6d72eb85c50d64f2300e&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;llama3.2:latest&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;llama3.2:latest&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;modified_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-05-04T17:37:44.706015396-07:00&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;size&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2019393189</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;digest&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;parent_model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gguf&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;family&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;llama&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;families&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;parameter_size&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7B&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;quantization_level&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Q4_0&quot;</span>
+<span class="w">        </span><span class="nt">&quot;families&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="s2">&quot;llama&quot;</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;parameter_size&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3.2B&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;quantization_level&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Q4_K_M&quot;</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">]</span>
@@ -5588,10 +5548,10 @@ When <code>format</code> is set to <code>json</code>, the output will always be 
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "navigation.expand", "navigation.instant", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "navigation.expand", "navigation.instant", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>
