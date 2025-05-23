@@ -11,6 +11,9 @@ site_url: 'https://ollama.qubitpi.org'
 theme:
   name: 'material'
   custom_dir: 'docs/overrides/'
+  font:
+    text: Poppins
+    code: Ubuntu Mono
   favicon: assets/logo/favicon.ico
   logo: assets/logo/ollama.png
   icon:
