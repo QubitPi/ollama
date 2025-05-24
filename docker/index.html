@@ -1155,8 +1155,8 @@ If you're running on an NVIDIA JetPack system, Ollama can't automatically discov
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>ollama<span class="w"> </span>ollama<span class="w"> </span>run<span class="w"> </span>llama3.2
 </code></pre></div>
 <p>An interactive session will start when the model starts running. If we are in a CI/CD environment that needs to avoid
-such session, we run the model in
-<a href="https://docker.qubitpi.org/guides/golang/run-containers/#run-in-detached-mode">detached mode</a>:</p>
+such session, we can run the model in <a href="https://docker.qubitpi.org/guides/golang/run-containers/#run-in-detached-mode">detached
+mode</a>:</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-d<span class="w"> </span>ollama<span class="w"> </span>ollama<span class="w"> </span>run<span class="w"> </span>llama3.2
 </code></pre></div>
 <h3 id="try-different-models"><a class="toclink" href="#try-different-models">Try different models</a></h3>
