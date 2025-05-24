@@ -73,6 +73,14 @@ Now you can run a model:
 docker exec -it ollama ollama run llama3.2
 ```
 
+An interactive session will start when the model starts running. If we are in a CI/CD environment that needs to avoid
+such session, we can run the model in [detached
+mode](https://docker.qubitpi.org/guides/golang/run-containers/#run-in-detached-mode):
+
+```shell
+docker exec -d ollama ollama run llama3.2
+```
+
 ### Try different models
 
 More models can be found on the [Ollama library](https://ollama.com/library).
