@@ -10,8 +10,9 @@ curl -fsSL https://ollama.com/install.sh | sh
 
 ## Manual install
 
-> [!NOTE]
-> If you are upgrading from a prior version, you should remove the old libraries with `sudo rm -rf /usr/lib/ollama` first.
+!!! note
+
+    If you are upgrading from a prior version, you should remove the old libraries with `sudo rm -rf /usr/lib/ollama` first.
 
 Download and extract the package:
 
@@ -108,12 +109,13 @@ sudo systemctl start ollama
 sudo systemctl status ollama
 ```
 
-> [!NOTE]
-> While AMD has contributed the `amdgpu` driver upstream to the official linux
-> kernel source, the version is older and may not support all ROCm features. We
-> recommend you install the latest driver from
-> [AMD](https://www.amd.com/en/support/download/linux-drivers.html) for best support
-> of your Radeon GPU.
+!!! note
+
+    While AMD has contributed the `amdgpu` driver upstream to the official linux
+    kernel source, the version is older and may not support all ROCm features. We
+    recommend you install the latest driver from
+    [AMD](https://www.amd.com/en/support/download/linux-drivers.html) for best support
+    of your Radeon GPU.
 
 ## Customizing
 

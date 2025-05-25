@@ -1,6 +1,8 @@
 #!/bin/bash
 set -ex
 
+# Copyright 2025 Jiaqi Liu. All rights reserved.
+
 docker run \
   --rm \
   --quiet \
