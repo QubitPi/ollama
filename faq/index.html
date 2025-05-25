@@ -1580,10 +1580,10 @@ systemctl<span class="w"> </span>restart<span class="w"> </span>ollama
 </ol>
 <h2 id="how-do-i-use-ollama-behind-a-proxy"><a class="toclink" href="#how-do-i-use-ollama-behind-a-proxy">How do I use Ollama behind a proxy?</a></h2>
 <p>Ollama pulls models from the Internet and may require a proxy server to access the models. Use <code>HTTPS_PROXY</code> to redirect outbound requests through the proxy. Ensure the proxy certificate is installed as a system certificate. Refer to the section above for how to use environment variables on your platform.</p>
-<blockquote>
-<p>[!NOTE]
-Avoid setting <code>HTTP_PROXY</code>. Ollama does not use HTTP for model pulls, only HTTPS. Setting <code>HTTP_PROXY</code> may interrupt client connections to the server.</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Avoid setting <code>HTTP_PROXY</code>. Ollama does not use HTTP for model pulls, only HTTPS. Setting <code>HTTP_PROXY</code> may interrupt client connections to the server.</p>
+</div>
 <h3 id="how-do-i-use-ollama-behind-a-proxy-in-docker"><a class="toclink" href="#how-do-i-use-ollama-behind-a-proxy-in-docker">How do I use Ollama behind a proxy in Docker?</a></h3>
 <p>The Ollama Docker container image can be configured to use a proxy by passing <code>-e HTTPS_PROXY=https://proxy.example.com</code> when starting the container.</p>
 <p>Alternatively, the Docker daemon can be configured to use a proxy. Instructions are available for Docker Desktop on <a href="https://docs.docker.com/desktop/settings/mac/#proxies">macOS</a>, <a href="https://docs.docker.com/desktop/settings/windows/#proxies">Windows</a>, and <a href="https://docs.docker.com/desktop/settings/linux/#proxies">Linux</a>, and Docker <a href="https://docs.docker.com/config/daemon/systemd/#httphttps-proxy">daemon with systemd</a>.</p>

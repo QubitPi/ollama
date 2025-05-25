@@ -1135,13 +1135,13 @@ cmake<span class="w"> </span>--build<span class="w"> </span>build
 <div class="highlight"><pre><span></span><code>cmake<span class="w"> </span>-B<span class="w"> </span>build
 cmake<span class="w"> </span>--build<span class="w"> </span>build<span class="w"> </span>--config<span class="w"> </span>Release
 </code></pre></div>
-<blockquote>
-<p>[!IMPORTANT]
-Building for ROCm requires additional flags:
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Building for ROCm requires additional flags:
 <div class="highlight"><pre><span></span><code>cmake -B build -G Ninja -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
 cmake --build build --config Release
 </code></pre></div></p>
-</blockquote>
+</div>
 <p>Lastly, run Ollama:</p>
 <div class="highlight"><pre><span></span><code>go<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>serve
 </code></pre></div>
@@ -1160,10 +1160,10 @@ cmake --build build --config Release
 </ul>
 </li>
 </ul>
-<blockquote>
-<p>[!IMPORTANT]
-Ensure prerequisites are in <code>PATH</code> before running CMake.</p>
-</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Ensure prerequisites are in <code>PATH</code> before running CMake.</p>
+</div>
 <p>Then, configure and build the project:</p>
 <div class="highlight"><pre><span></span><code>cmake<span class="w"> </span>-B<span class="w"> </span>build
 cmake<span class="w"> </span>--build<span class="w"> </span>build

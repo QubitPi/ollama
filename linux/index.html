@@ -1173,10 +1173,10 @@
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://ollama.com/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
 </code></pre></div>
 <h2 id="manual-install"><a class="toclink" href="#manual-install">Manual install</a></h2>
-<blockquote>
-<p>[!NOTE]
-If you are upgrading from a prior version, you should remove the old libraries with <code>sudo rm -rf /usr/lib/ollama</code> first.</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are upgrading from a prior version, you should remove the old libraries with <code>sudo rm -rf /usr/lib/ollama</code> first.</p>
+</div>
 <p>Download and extract the package:</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-L<span class="w"> </span>https://ollama.com/download/ollama-linux-amd64.tgz<span class="w"> </span>-o<span class="w"> </span>ollama-linux-amd64.tgz
 sudo<span class="w"> </span>tar<span class="w"> </span>-C<span class="w"> </span>/usr<span class="w"> </span>-xzf<span class="w"> </span>ollama-linux-amd64.tgz
@@ -1234,14 +1234,14 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">en
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>ollama
 sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>ollama
 </code></pre></div>
-<blockquote>
-<p>[!NOTE]
-While AMD has contributed the <code>amdgpu</code> driver upstream to the official linux
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>While AMD has contributed the <code>amdgpu</code> driver upstream to the official linux
 kernel source, the version is older and may not support all ROCm features. We
 recommend you install the latest driver from
 <a href="https://www.amd.com/en/support/linux-drivers">https://www.amd.com/en/support/linux-drivers</a> for best support of your Radeon
 GPU.</p>
-</blockquote>
+</div>
 <h2 id="customizing"><a class="toclink" href="#customizing">Customizing</a></h2>
 <p>To customize the installation of Ollama, you can edit the systemd service file or the environment variables by running:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>edit<span class="w"> </span>ollama

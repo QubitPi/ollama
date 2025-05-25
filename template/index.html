@@ -1287,10 +1287,10 @@ TEMPLATE<span class="w"> </span><span class="s2">&quot;&quot;&quot;{{- if .Syste
 <p>CodeLlama <a href="https://ollama.com/library/codellama:7b-code">7B</a> and <a href="https://ollama.com/library/codellama:13b-code">13B</a> code completion models support fill-in-middle.</p>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nx">PRE</span><span class="p">&gt;</span><span class="w"> </span><span class="p">{{</span><span class="w"> </span><span class="p">.</span><span class="nx">Prompt</span><span class="w"> </span><span class="p">}}</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">SUF</span><span class="p">&gt;{{</span><span class="w"> </span><span class="p">.</span><span class="nx">Suffix</span><span class="w"> </span><span class="p">}}</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">MID</span><span class="p">&gt;</span>
 </code></pre></div>
-<blockquote>
-<p>[!NOTE]
-CodeLlama 34B and 70B code completion and all instruct and Python fine-tuned models do not support fill-in-middle.</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>CodeLlama 34B and 70B code completion and all instruct and Python fine-tuned models do not support fill-in-middle.</p>
+</div>
 <h4 id="codestral"><a class="toclink" href="#codestral">Codestral</a></h4>
 <p>Codestral <a href="https://ollama.com/library/codestral:22b">22B</a> supports fill-in-middle.</p>
 <div class="highlight"><pre><span></span><code><span class="p">[</span><span class="nx">SUFFIX</span><span class="p">]{{</span><span class="w"> </span><span class="p">.</span><span class="nx">Suffix</span><span class="w"> </span><span class="p">}}[</span><span class="nx">PREFIX</span><span class="p">]</span><span class="w"> </span><span class="p">{{</span><span class="w"> </span><span class="p">.</span><span class="nx">Prompt</span><span class="w"> </span><span class="p">}}</span>

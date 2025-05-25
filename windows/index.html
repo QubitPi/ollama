@@ -1130,10 +1130,10 @@ the explorer window by hitting <code>&lt;Ctrl&gt;+R</code> and type in:
 - <code>explorer %HOMEPATH%\.ollama</code> contains models and configuration</p>
 <h2 id="uninstall"><a class="toclink" href="#uninstall">Uninstall</a></h2>
 <p>The Ollama Windows installer registers an Uninstaller application.  Under <code>Add or remove programs</code> in Windows Settings, you can uninstall Ollama.</p>
-<blockquote>
-<p>[!NOTE]
-If you have <a href="#changing-model-location">changed the OLLAMA_MODELS location</a>, the installer will not remove your downloaded models</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have <a href="#changing-model-location">changed the OLLAMA_MODELS location</a>, the installer will not remove your downloaded models</p>
+</div>
 <h2 id="standalone-cli"><a class="toclink" href="#standalone-cli">Standalone CLI</a></h2>
 <p>The easiest way to install Ollama on Windows is to use the <code>OllamaSetup.exe</code>
 installer. It installs in your account without requiring Administrator rights.
@@ -1146,10 +1146,10 @@ and extract the additional ROCm package <code>ollama-windows-amd64-rocm.zip</cod
 same directory.  This allows for embedding Ollama in existing applications, or
 running it as a system service via <code>ollama serve</code> with tools such as
 <a href="https://nssm.cc/">NSSM</a>. </p>
-<blockquote>
-<p>[!NOTE]<br />
-If you are upgrading from a prior version, you should remove the old directories first.</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are upgrading from a prior version, you should remove the old directories first.</p>
+</div>
 
 
 

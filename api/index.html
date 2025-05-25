@@ -4288,10 +4288,10 @@
 <p>Structured outputs are supported by providing a JSON schema in the <code>format</code> parameter. The model will generate a response that matches the schema. See the <a href="#request-structured-outputs">structured outputs</a> example below.</p>
 <h4 id="json-mode"><a class="toclink" href="#json-mode">JSON mode</a></h4>
 <p>Enable JSON mode by setting the <code>format</code> parameter to <code>json</code>. This will structure the response as a valid JSON object. See the JSON mode <a href="#request-json-mode">example</a> below.</p>
-<blockquote>
-<p>[!IMPORTANT]
-It's important to instruct the model to use JSON in the <code>prompt</code>. Otherwise, the model may generate large amounts whitespace.</p>
-</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>It's important to instruct the model to use JSON in the <code>prompt</code>. Otherwise, the model may generate large amounts whitespace.</p>
+</div>
 <h3 id="examples"><a class="toclink" href="#examples">Examples</a></h3>
 <h4 id="generate-request-streaming"><a class="toclink" href="#generate-request-streaming">Generate request (Streaming)</a></h4>
 <h5 id="request"><a class="toclink" href="#request">Request</a></h5>
@@ -4428,10 +4428,10 @@ It's important to instruct the model to use JSON in the <code>prompt</code>. Oth
 <span class="p">}</span>
 </code></pre></div>
 <h4 id="request-json-mode"><a class="toclink" href="#request-json-mode">Request (JSON mode)</a></h4>
-<blockquote>
-<p>[!IMPORTANT]
-When <code>format</code> is set to <code>json</code>, the output will always be a well-formed JSON object. It's important to also instruct the model to respond in JSON.</p>
-</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>When <code>format</code> is set to <code>json</code>, the output will always be a well-formed JSON object. It's important to also instruct the model to respond in JSON.</p>
+</div>
 <h5 id="request_4"><a class="toclink" href="#request_4">Request</a></h5>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>http://localhost:11434/api/generate<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
 <span class="s1">  &quot;model&quot;: &quot;llama3.2&quot;,</span>
