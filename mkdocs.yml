@@ -1,7 +1,8 @@
+# Copyright 2025 Jiaqi Liu. All rights reserved.
 site_name: 'Ollama Documentation'
 site_description: 'Get up and running with Llama 3.3, DeepSeek-R1, Phi-4, Gemma 3, and other large language models.'
 site_author: 'QubitPi (https://github.com/Qubitpi)'
-copyright: '<p>&copy <a href="https://github.com/ollama"><em>Ollama Organization</em></a><br/><span>This project is licensed under the MIT license.</span></p>'
+copyright: '<p>&copy <a href="https://github.com/ollama"><em>QubitPi</em></a><br/><span>This project is licensed under the MIT license.</span></p>'
 repo_name: 'ollama'
 repo_url: 'https://github.com/QubitPi/ollama'
 edit_uri: 'edit/master/docs'
