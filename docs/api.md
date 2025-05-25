@@ -63,8 +63,9 @@ Structured outputs are supported by providing a JSON schema in the `format` para
 
 Enable JSON mode by setting the `format` parameter to `json`. This will structure the response as a valid JSON object. See the JSON mode [example](#request-json-mode) below.
 
-> [!IMPORTANT]
-> It's important to instruct the model to use JSON in the `prompt`. Otherwise, the model may generate large amounts whitespace.
+!!! tip
+
+    It's important to instruct the model to use JSON in the `prompt`. Otherwise, the model may generate large amounts whitespace.
 
 ### Examples
 
@@ -238,8 +239,9 @@ curl -X POST http://localhost:11434/api/generate -H "Content-Type: application/j
 
 #### Request (JSON mode)
 
-> [!IMPORTANT]
-> When `format` is set to `json`, the output will always be a well-formed JSON object. It's important to also instruct the model to respond in JSON.
+!!! tip
+
+    When `format` is set to `json`, the output will always be a well-formed JSON object. It's important to also instruct the model to respond in JSON.
 
 ##### Request
 
