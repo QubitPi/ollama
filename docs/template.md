@@ -155,8 +155,9 @@ CodeLlama [7B](https://ollama.com/library/codellama:7b-code) and [13B](https://o
 <PRE> {{ .Prompt }} <SUF>{{ .Suffix }} <MID>
 ```
 
-> [!NOTE]
-> CodeLlama 34B and 70B code completion and all instruct and Python fine-tuned models do not support fill-in-middle.
+!!! note
+
+    CodeLlama 34B and 70B code completion and all instruct and Python fine-tuned models do not support fill-in-middle.
 
 #### Codestral
 
