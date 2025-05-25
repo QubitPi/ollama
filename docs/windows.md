@@ -67,8 +67,9 @@ the explorer window by hitting `<Ctrl>+R` and type in:
 
 The Ollama Windows installer registers an Uninstaller application.  Under `Add or remove programs` in Windows Settings, you can uninstall Ollama.
 
-> [!NOTE]
-> If you have [changed the OLLAMA_MODELS location](#changing-model-location), the installer will not remove your downloaded models
+!!! note
+
+    If you have [changed the OLLAMA_MODELS location](#changing-model-location), the installer will not remove your downloaded models
 
 
 ## Standalone CLI
@@ -86,5 +87,6 @@ same directory.  This allows for embedding Ollama in existing applications, or
 running it as a system service via `ollama serve` with tools such as
 [NSSM](https://nssm.cc/). 
 
-> [!NOTE]  
-> If you are upgrading from a prior version, you should remove the old directories first.
+!!! note
+
+    If you are upgrading from a prior version, you should remove the old directories first.
