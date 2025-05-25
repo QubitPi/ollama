@@ -1,7 +1,8 @@
 # Ollama Model File
 
-> [!NOTE]
-> `Modelfile` syntax is in development
+!!! note
+
+    `Modelfile` syntax is in development
 
 A model file is the blueprint to create and share models with Ollama.
 
