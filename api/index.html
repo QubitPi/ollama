@@ -4274,6 +4274,7 @@
 <li><code>prompt</code>: the prompt to generate a response for</li>
 <li><code>suffix</code>: the text after the model response</li>
 <li><code>images</code>: (optional) a list of base64-encoded images (for multimodal models such as <code>llava</code>)</li>
+<li><code>think</code>: (for thinking models) should the model think before responding?</li>
 </ul>
 <p>Advanced parameters (optional):</p>
 <ul>
@@ -4623,11 +4624,13 @@
 <li><code>model</code>: (required) the <a href="#model-names">model name</a></li>
 <li><code>messages</code>: the messages of the chat, this can be used to keep a chat memory</li>
 <li><code>tools</code>: list of tools in JSON for the model to use if supported</li>
+<li><code>think</code>: (for thinking models) should the model think before responding?</li>
 </ul>
 <p>The <code>message</code> object has the following fields:</p>
 <ul>
 <li><code>role</code>: the role of the message, either <code>system</code>, <code>user</code>, <code>assistant</code>, or <code>tool</code></li>
 <li><code>content</code>: the content of the message</li>
+<li><code>thinking</code>: (for thinking models) the model's thinking process</li>
 <li><code>images</code> (optional): a list of images to include in the message (for multimodal models such as <code>llava</code>)</li>
 <li><code>tool_calls</code> (optional): a list of tools in JSON that the model wants to use</li>
 </ul>
