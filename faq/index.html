@@ -1105,6 +1105,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#how-can-i-stop-ollama-from-starting-when-i-login-to-my-computer" class="md-nav__link">
+    <span class="md-ellipsis">
+      How can I stop Ollama from starting when I login to my computer
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1449,6 +1458,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#how-can-i-stop-ollama-from-starting-when-i-login-to-my-computer" class="md-nav__link">
+    <span class="md-ellipsis">
+      How can I stop Ollama from starting when I login to my computer
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1682,13 +1700,13 @@ properties.</p>
 <h2 id="how-do-i-manage-the-maximum-number-of-requests-the-ollama-server-can-queue"><a class="toclink" href="#how-do-i-manage-the-maximum-number-of-requests-the-ollama-server-can-queue">How do I manage the maximum number of requests the Ollama server can queue?</a></h2>
 <p>If too many requests are sent to the server, it will respond with a 503 error indicating the server is overloaded.  You can adjust how many requests may be queue by setting <code>OLLAMA_MAX_QUEUE</code>.</p>
 <h2 id="how-does-ollama-handle-concurrent-requests"><a class="toclink" href="#how-does-ollama-handle-concurrent-requests">How does Ollama handle concurrent requests?</a></h2>
-<p>Ollama supports two levels of concurrent processing.  If your system has sufficient available memory (system memory when using CPU inference, or VRAM for GPU inference) then multiple models can be loaded at the same time.  For a given model, if there is sufficient available memory when the model is loaded, it is configured to allow parallel request processing.</p>
+<p>Ollama supports two levels of concurrent processing.  If your system has sufficient available memory (system memory when using CPU inference, or VRAM for GPU inference) then multiple models can be loaded at the same time.  For a given model, if there is sufficient available memory when the model is loaded, it can be configured to allow parallel request processing.</p>
 <p>If there is insufficient available memory to load a new model request while one or more models are already loaded, all new requests will be queued until the new model can be loaded.  As prior models become idle, one or more will be unloaded to make room for the new model.  Queued requests will be processed in order.  When using GPU inference new models must be able to completely fit in VRAM to allow concurrent model loads.</p>
 <p>Parallel request processing for a given model results in increasing the context size by the number of parallel requests.  For example, a 2K context with 4 parallel requests will result in an 8K context and additional memory allocation.</p>
 <p>The following server settings may be used to adjust how Ollama handles concurrent requests on most platforms:</p>
 <ul>
 <li><code>OLLAMA_MAX_LOADED_MODELS</code> - The maximum number of models that can be loaded concurrently provided they fit in available memory.  The default is 3 * the number of GPUs or 3 for CPU inference.</li>
-<li><code>OLLAMA_NUM_PARALLEL</code> - The maximum number of parallel requests each model will process at the same time.  The default will auto-select either 4 or 1 based on available memory.</li>
+<li><code>OLLAMA_NUM_PARALLEL</code> - The maximum number of parallel requests each model will process at the same time.  The default is 1, and will handle 1 request per model at a time.</li>
 <li><code>OLLAMA_MAX_QUEUE</code> - The maximum number of requests Ollama will queue when busy before rejecting additional requests. The default is 512</li>
 </ul>
 <p>Note: Windows with Radeon GPUs currently default to 1 model maximum due to limitations in ROCm v5.7 for available VRAM reporting.  Once ROCm v6.2 is available, Windows Radeon will follow the defaults above.  You may enable concurrent model loads on Radeon on Windows, but ensure you don't load more models than will fit into your GPUs VRAM.</p>
@@ -1713,6 +1731,14 @@ properties.</p>
 </ul>
 <p>How much the cache quantization impacts the model's response quality will depend on the model and the task.  Models that have a high GQA count (e.g. Qwen2) may see a larger impact on precision from quantization than models with a low GQA count.</p>
 <p>You may need to experiment with different quantization types to find the best balance between memory usage and quality.</p>
+<h2 id="how-can-i-stop-ollama-from-starting-when-i-login-to-my-computer"><a class="toclink" href="#how-can-i-stop-ollama-from-starting-when-i-login-to-my-computer">How can I stop Ollama from starting when I login to my computer</a></h2>
+<p>Ollama for Windows and macOS register as a login item during installation.  You can disable this if you prefer not to have Ollama automatically start.  Ollama will respect this setting across upgrades, unless you uninstall the application.</p>
+<p><strong>Windows</strong>
+- Remove <code>%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\Ollama.lnk</code></p>
+<p><strong>MacOS Monterey (v12)</strong>
+- Open <code>Settings</code> -&gt; <code>Users &amp; Groups</code> -&gt; <code>Login Items</code> and find the <code>Ollama</code> entry, then click the <code>-</code> (minus) to remove</p>
+<p><strong>MacOS Ventura (v13) and later</strong>
+- Open <code>Settings</code> and search for "Login Items", find the <code>Ollama</code> entry under "Allow in the Background`, then click the slider to disable.</p>
 
 
 
