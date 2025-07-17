@@ -1128,6 +1128,7 @@ ADAPTER<span class="w"> </span>/path/to/safetensors/adapter/directory
 <div class="highlight"><pre><span></span><code><span class="k">FROM</span><span class="w"> </span><span class="s">/path/to/safetensors/directory</span>
 </code></pre></div>
 <p>If you create the Modelfile in the same directory as the weights, you can use the command <code>FROM .</code>.</p>
+<p>If you do not create the Modelfile, ollama will act as if there was a Modelfile with the command <code>FROM .</code>.</p>
 <p>Now run the <code>ollama create</code> command from the directory where you created the <code>Modelfile</code>:</p>
 <div class="highlight"><pre><span></span><code>ollama<span class="w"> </span>create<span class="w"> </span>my-model
 </code></pre></div>
