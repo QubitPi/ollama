@@ -1084,7 +1084,7 @@
 <div class="highlight"><pre><span></span><code>cat<span class="w"> </span>~/.ollama/logs/server.log
 </code></pre></div>
 <p>On <strong>Linux</strong> systems with systemd, the logs can be found with this command:</p>
-<div class="highlight"><pre><span></span><code>journalctl<span class="w"> </span>-u<span class="w"> </span>ollama<span class="w"> </span>--no-pager<span class="w"> </span>--follow<span class="w"> </span>--pager-end<span class="w"> </span>
+<div class="highlight"><pre><span></span><code>journalctl<span class="w"> </span>-u<span class="w"> </span>ollama<span class="w"> </span>--no-pager<span class="w"> </span>--follow<span class="w"> </span>--pager-end
 </code></pre></div>
 <p>When you run Ollama in a <strong>container</strong>, the logs go to stdout/stderr in the container:</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>logs<span class="w"> </span>&lt;container-name&gt;
@@ -1092,7 +1092,7 @@
 <p>(Use <code>docker ps</code> to find the container name)</p>
 <p>If manually running <code>ollama serve</code> in a terminal, the logs will be on that terminal.</p>
 <p>When you run Ollama on <strong>Windows</strong>, there are a few different locations. You can view them in the explorer window by hitting <code>&lt;cmd&gt;+R</code> and type in:
-- <code>explorer %LOCALAPPDATA%\Ollama</code> to view logs.  The most recent server logs will be in <code>server.log</code> and older logs will be in <code>server-#.log</code> 
+- <code>explorer %LOCALAPPDATA%\Ollama</code> to view logs.  The most recent server logs will be in <code>server.log</code> and older logs will be in <code>server-#.log</code>
 - <code>explorer %LOCALAPPDATA%\Programs\Ollama</code> to browse the binaries (The installer adds this to your user PATH)
 - <code>explorer %HOMEPATH%\.ollama</code> to browse where models and configuration is stored</p>
 <p>To enable additional debug logging to help troubleshoot problems, first <strong>Quit the running app from the tray menu</strong> then in a powershell terminal</p>
@@ -1101,7 +1101,7 @@
 </code></pre></div>
 <p>Join the <a href="https://discord.gg/ollama">Discord</a> for help interpreting the logs.</p>
 <h2 id="llm-libraries"><a class="toclink" href="#llm-libraries">LLM libraries</a></h2>
-<p>Ollama includes multiple LLM libraries compiled for different GPUs and CPU vector features. Ollama tries to pick the best one based on the capabilities of your system. If this autodetection has problems, or you run into other problems (e.g. crashes in your GPU) you can workaround this by forcing a specific LLM library. <code>cpu_avx2</code> will perform the best, followed by <code>cpu_avx</code> an the slowest but most compatible is <code>cpu</code>. Rosetta emulation under MacOS will work with the <code>cpu</code> library. </p>
+<p>Ollama includes multiple LLM libraries compiled for different GPUs and CPU vector features. Ollama tries to pick the best one based on the capabilities of your system. If this autodetection has problems, or you run into other problems (e.g. crashes in your GPU) you can workaround this by forcing a specific LLM library. <code>cpu_avx2</code> will perform the best, followed by <code>cpu_avx</code> and the slowest but most compatible is <code>cpu</code>. Rosetta emulation under MacOS will work with the <code>cpu</code> library.</p>
 <p>In the server log, you will see a message that looks something like this (varies from release to release):</p>
 <div class="highlight"><pre><span></span><code>Dynamic LLM libraries [rocm_v6 cpu cpu_avx cpu_avx2 cuda_v12 rocm_v5]
 </code></pre></div>
@@ -1135,7 +1135,7 @@
 - Check dmesg for any errors <code>sudo dmesg | grep -i nvrm</code> and <code>sudo dmesg | grep -i nvidia</code></p>
 <h2 id="amd-gpu-discovery"><a class="toclink" href="#amd-gpu-discovery">AMD GPU Discovery</a></h2>
 <p>On linux, AMD GPU access typically requires <code>video</code> and/or <code>render</code> group membership to access the <code>/dev/kfd</code> device.  If permissions are not set up correctly, Ollama will detect this and report an error in the server log.</p>
-<p>When running in a container, in some Linux distributions and container runtimes, the ollama process may be unable to access the GPU.  Use <code>ls -lnd /dev/kfd /dev/dri /dev/dri/*</code> on the host system to determine the <strong>numeric</strong> group IDs on your system, and pass additional <code>--group-add ...</code> arguments to the container so it can access the required devices.   For example, in the following output <code>crw-rw---- 1 0  44 226,   0 Sep 16 16:55 /dev/dri/card0</code> the group ID column is <code>44</code> </p>
+<p>When running in a container, in some Linux distributions and container runtimes, the ollama process may be unable to access the GPU.  Use <code>ls -lnd /dev/kfd /dev/dri /dev/dri/*</code> on the host system to determine the <strong>numeric</strong> group IDs on your system, and pass additional <code>--group-add ...</code> arguments to the container so it can access the required devices.   For example, in the following output <code>crw-rw---- 1 0  44 226,   0 Sep 16 16:55 /dev/dri/card0</code> the group ID column is <code>44</code></p>
 <p>If you are experiencing problems getting Ollama to correctly discover or use your GPU for inference, the following may help isolate the failure.
 - <code>AMD_LOG_LEVEL=3</code> Enable info log levels in the AMD HIP/ROCm libraries.  This can help show more detailed error codes that can help troubleshoot problems
 - <code>OLLAMA_DEBUG=1</code> During GPU discovery additional information will be reported
